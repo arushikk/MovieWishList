@@ -1,0 +1,21 @@
+<h3>Movie</h3>
+<div class="container">
+    <form (ngSubmit)="saveMovie()"  #todoForm="ngForm">
+    <fieldset class="form-group" >
+        <label>Description</label>
+   
+<input type="text" [(ngModel)]="movie.description" class="form-control" name="description"  required="required">
+</fieldset>
+
+<fieldset class="form-group" >
+    <label>ReleasedDate</label>
+
+<input type="date" 
+ [ngModel] ="movie.releaseDate | date :'yyyy-MM-dd'" 
+ (ngModelChange)="movie.releaseDate=$event" class="form-control" name="releaseDate"  required="required">
+</fieldset>
+
+<button type="submit"  class="btn btn-success" >Save Movie</button>
+</form>
+
+</div>
